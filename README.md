@@ -9,11 +9,11 @@
 Run the following command to set up the environment with all the required dependencies. If there is an active environment, it will overwrite it; otherwise, it will create a new one:
 
 ```sh
-make env
+make set-env
 ```
 
 Run the following command to export the environment to a file:
 
 ```sh
-make env-file
+make exp-env
 ```
