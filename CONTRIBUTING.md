@@ -1,31 +1,33 @@
 # Contributing
 
-We appreciate your interest in contributing to our work. This document outlines the guidelines and best practices for contributing to ensure a smooth, collaborative, and effective research environment.
+We appreciate your interest in the project. This document outlines the guidelines for contributing.
 
 ## Getting Started
 
-This project follows the [Cookiecutter Data Science][1] directory structure. Understanding this layout is crucial for navigating the repository and knowing where to place your contributions. 
+This project follows the [Cookiecutter Data Science][cookiecutter] directory structure. Understanding this layout is crucial for navigating the repository and knowing where to place your contributions.
 
 ```
 ├── .github/            # GitHub specific configurations.
-├── CONTRIBUTING.md     # Guidelines for contributing to the project.
-├── data/
-│   ├── external/       # Data from third party sources.
-│   ├── interim/        # Intermediate data that has been transformed.
-│   ├── processed/      # The final, canonical data sets for modeling.
-│   └── raw/            # The original, immutable data dump.
-├── environment.yml     # The environment file.
+├── data/               # All data.
+│   ├── external/       # External data.
+│   ├── interim/        # Intermediate data.
+│   ├── processed/      # Processed data.
+│   └── raw/            # Raw data.
 ├── notebooks/          # Jupyter notebooks.
-└── README.md           # The top-level README for developers using this project.
+├── .gitignore          # Exclude files and directories from version control.
+├── CONTRIBUTING.md     # Provides guidelines for contributing to the project.
+├── environment.yml     # Defines the environment dependencies.
+├── Makefile            # Automates development tasks.
+└── README.md           # Provides an overview of the project.
 ```
 
-Refer to the project's [`README.md`][2] for the detailed setup instructions.
+Refer to the [`README.md`](README.md) for the detailed setup instructions.
 
 ## Contribution Workflow
 
-### [Conventional Commits][3]
+### [Conventional Commits][conventional-commits]
 
-We follow the [Conventional Commits][3] specification for commit messages. This helps us maintain a clean commit history and understand the purpose of each change.
+We follow the [Conventional Commits][conventional-commits] specification for commit messages. This helps us maintain a clean commit history and understand the purpose of each change.
 
 A commit message should be structured as follows:
 
@@ -37,34 +39,36 @@ A commit message should be structured as follows:
 [optional footer(s)]
 ```
 
-**Types:**
+The recommended length for the first line is 50 characters, and the rest should be wrapped at 72 characters.
 
-- `feat`: Introduces a new feature to the codebase.
+**`type`:**
 
-- `fix`: Patches a bug in the codebase.
+- `feat`: Introduces a new feature.
 
-- `build`: Changes that affect the build system or external dependencies.
+- `fix`: Patches a bug.
 
-- `ci`: Changes to the CI configuration files and scripts.
+- `test`: Changes to the tests.
 
 - `docs`: Changes to the documentation.
 
-- `perf`: A code change that improves performance.
+- `build`: Changes to the build system or external dependencies.
 
-- `test`: Adding or correcting tests.
+- `ci`: Changes to the CI configuration files and scripts.
 
-- `refactor`: A code change that improves the internal structure of the code without altering the effectiveness and efficiency.
+- `perf`: Changes to the performance.
 
-**Scope (optional):**
+- `refactor`: Changes to the internal structure of the code without altering the effectiveness and efficiency.
 
-The scope provides contextual information about the commit's change. It consists of a noun describing a section of the codebase that the commit modifies.
+**`scope`:**
 
-### [GitHub Flow][4]
+The scope provides additional contextual information about the commit change. It consists of a noun describing a section of the codebase that the commit modifies.
 
-We follow the [GitHub Flow][4] branching strategy, ensuring a clear and reviewable process for all contributions.
+### [GitHub Flow][github-flow]
+
+We follow the [GitHub Flow][github-flow] branching strategy, ensuring a clear and reviewable process for all contributions.
 
 
-1.  Create a branch from `main` for your contribution. For example:
+1.  Create a new branch from `main` for your contribution. For example:
 
     - `feat/add-new-model`
 
@@ -72,8 +76,8 @@ We follow the [GitHub Flow][4] branching strategy, ensuring a clear and reviewab
 
 2.  Make your changes.
 
-3.  Commit your changes, follow the [Conventional Commits][3] specification. For example:
-    
+3.  Commit your changes, follow the [Conventional Commits][conventional-commits] specification. For example:
+
     - `feat: add data preprocessing step`
 
     - `fix: correct typo in README`
@@ -82,23 +86,22 @@ We follow the [GitHub Flow][4] branching strategy, ensuring a clear and reviewab
 
 5.  Open a Pull Request from your branch to the `main` branch for review.
 
-### Issues 
+### Issues
 
-We use Issues to track bug and new ideas. When opening an issue, please use the provided templates to help us understand and address your concern efficiently.
+We use Issues to track bugs and new ideas. Before opening a new issue,  check the existing issues to avoid duplicates. Use the provided templates to help us understand and address your concern efficiently.
 
-1. Go to the [Issues tab][5].
-2. Click "New issue" and select the most appropriate template.
-3. Fill out the template completely, providing all requested details to clearly describe the bug or proposed feature.
+1. Go to the ["Issues"][issues] tab.
+2. Click ["New issue"][new-issue] and select the most appropriate template.
+3. Fill out the template, providing all requested details to clearly describe it.
 
 ## Contact
 
-If you have any questions, need further clarification, or wish to discuss a contribution before starting work, please reach out to the project maintainer via [eduardo.castro.quispe@gmail.com][6].
+If you have any questions, need further clarification, or wish to discuss a contribution before starting work, please reach out to the project maintainer via [eduardo.castro.quispe@gmail.com](mailto:eduardo.castro.quispe@gmail.com).
 
 <!-- References -->
 
-[1]: https://cookiecutter-data-science.drivendata.org
-[2]: README.md
-[3]: https://www.conventionalcommits.org
-[4]: https://docs.github.com/get-started/using-github/github-flow
-[5]: https://github.com/ceduardosq/peru_poverty_sat/issues
-[6]: mailto:eduardo.castro.quispe@gmail.com
+[conventional-commits]: https://www.conventionalcommits.org
+[cookiecutter]: https://cookiecutter-data-science.drivendata.org
+[github-flow]: https://docs.github.com/get-started/using-github/github-flow
+[issues]: https://github.com/ceduardosq/peru_poverty_sat/issues
+[new-issue]: https://github.com/CEduardoSQ/peru_poverty_sat/issues/new/choose
