@@ -1,4 +1,4 @@
-# Assessing Peruvian Poverty from Satellite Images
+# Assessing Peruvian Poverty from Satellite Imagery
 
 ## Requirements
 
