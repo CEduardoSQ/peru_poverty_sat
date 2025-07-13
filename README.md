@@ -26,23 +26,13 @@ Follow these steps to download the housing and household characteristics of a sp
 
 ### Dependencies
 
-*This project uses a [`conda`][conda-docs] environment to manage the dependencies.*
+> *This project uses a [`conda`][conda] environment to manage the dependencies.*
 
-**Run the following command to set up the environment:**
-
-```sh
-make set-env
-```
-
-The command will update the active environment; in case there is no active environment, it will create one with the project name.
-
-**Run the following command to export the active environment into a file:**
+Run the following command to create an environment with the required dependencies:
 
 ```sh
-make exp-env
+conda env create --file environment.yml
 ```
-
-<!-- References -->
 
 [inei-microdatos]: https://proyectos.inei.gob.pe/microdatos/
-[conda-docs]: https://docs.conda.io
+[conda]: https://docs.conda.io
