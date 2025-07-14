@@ -4,3 +4,11 @@ channels:
   - defaults
 dependencies:
   - python=3.10.10
+  - pip
+  - pip:
+      - -e .
+  - numpy
+  - pyreadstat
+  - pyarrow
+  - scikit-learn
+  - autopep8

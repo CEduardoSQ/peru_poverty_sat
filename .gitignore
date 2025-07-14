@@ -1,0 +1,11 @@
+# Data
+data/
+
+# Notebooks
+*.ipynb
+
+# Rope project
+.ropeproject/
+
+# Python cache
+__pycache__/

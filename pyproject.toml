@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "peru_poverty_sat"
+version = "0.0.0"
+description = "Assessing Peruvian Poverty from Satellite Imagery"
+readme = "README.md"
+requires-python = "==3.10.10"
+authors = [
+    { name = "CEduardoSQ", email = "eduardo.castro.quispe@gmail.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3.10.10",
+    "Operating System :: OS Independent",
+]
+dependencies = []
