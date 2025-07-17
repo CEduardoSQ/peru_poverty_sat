@@ -7,8 +7,9 @@ dependencies:
   - pip
   - pip:
       - -e .
-  - numpy
   - pyreadstat
-  - pyarrow
-  - scikit-learn
   - autopep8
+  - pyarrow
+  - numpy
+  - scikit-learn
+  - jupyter

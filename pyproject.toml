@@ -8,11 +8,9 @@ version = "0.0.0"
 description = "Assessing Peruvian Poverty from Satellite Imagery"
 readme = "README.md"
 requires-python = "==3.10.10"
-authors = [
-    { name = "CEduardoSQ", email = "eduardo.castro.quispe@gmail.com" },
-]
+authors = [{ name = "CEduardoSQ", email = "eduardo.castro.quispe@gmail.com" }]
 classifiers = [
-    "Programming Language :: Python :: 3.10.10",
+    "Programming Language :: Python :: 3.10",
     "Operating System :: OS Independent",
 ]
 dependencies = []

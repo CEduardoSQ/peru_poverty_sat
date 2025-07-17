@@ -1,4 +1,3 @@
-import argparse
 from pathlib import Path
 from zipfile import ZipFile
 
@@ -244,7 +243,7 @@ def aggregate_clusters(households: pd.DataFrame) -> pd.DataFrame:
         A DataFrame with cluster-level aggregated data.
     """
     clusters = (
-        households.groupby("cluster")[
+        households.groupby(["year", "cluster"])[
             ["wealth_index", "sampling_weight"] +
             HouseholdsCols.GEOREFERENCE_COLS
         ]
@@ -260,6 +259,12 @@ def aggregate_clusters(households: pd.DataFrame) -> pd.DataFrame:
                 }
             )
         )
+        .astype({
+            "wealth_index": "float64",
+            "longitude": "float64",
+            "latitude": "float64",
+            "size": "int64"
+        })
         .reset_index()
     )
     return clusters
@@ -278,30 +283,14 @@ def main(year: int, module_code: int):
     households = calculate_wealth_index(households)
     clusters = aggregate_clusters(households)
 
-    households_path = INTERIM_DATA_DIR / f"households_{year}.parquet"
+    households_path = INTERIM_DATA_DIR / "households.parquet"
     households.to_parquet(households_path, index=False)
     print(f"Processed household data saved to {households_path}")
 
-    clusters_path = INTERIM_DATA_DIR / f"clusters_{year}.parquet"
+    clusters_path = INTERIM_DATA_DIR / "clusters.parquet"
     clusters.to_parquet(clusters_path, index=False)
     print(f"Aggregated cluster data saved to {clusters_path}")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Process ENAHO survey data.")
-    parser.add_argument(
-        "--year",
-        type=int,
-        required=True,
-        help="Year of the survey (e.g., 2024)."
-    )
-    parser.add_argument(
-        "--module-code",
-        type=int,
-        required=True,
-        help="Module code of the survey (e.g., 966).",
-    )
-
-    args = parser.parse_args()
-
-    main(year=args.year, module_code=args.module_code)
+    main(year=2024, module_code=966)
